@@ -7,6 +7,7 @@ import {
   ChannelContainer,
   ChannelListContainer,
   TeamChannelList,
+  Auth,
 } from "./components";
 
 import "./App.css";
@@ -15,7 +16,11 @@ const apiKey = `hy7x4t93r53t`;
 
 const client = StreamChat.getInstance(apiKey);
 
+const authToken = false;
+
 const App = () => {
+  if (!authToken) return <Auth />;
+
   return (
     <div>
       <div className="app__wrapper">
