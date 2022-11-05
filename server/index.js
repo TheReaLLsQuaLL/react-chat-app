@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.get(`/`, (req, res) => {
-  res.send(`Hello Worrld!`);
+  res.send(`Hello World!`);
 });
 
 app.use(`/auth`, authRoutes);

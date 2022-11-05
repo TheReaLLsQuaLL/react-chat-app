@@ -1,7 +1,7 @@
 import React from "react";
 import { StreamChat } from "stream-chat";
 import { ChannelList, Chat } from "stream-chat-react";
-import { Cookies } from "universal-cookie";
+import Cookies from "universal-cookie";
 
 import {
   ChannelContainer,
@@ -12,11 +12,26 @@ import {
 
 import "./App.css";
 
+const cookies = new Cookies();
+
 const apiKey = `hy7x4t93r53t`;
+const authToken = cookies.get("token");
 
 const client = StreamChat.getInstance(apiKey);
 
-const authToken = false;
+if (authToken) {
+  client.connectUser(
+    {
+      name: cookies.get(`username`),
+      fullName: cookies.get(`fullName`),
+      id: cookies.get(`userId`),
+      phoneNumber: cookies.get(`phoneNumber`),
+      hashedPassword: cookies.get(`hashedPassword`),
+      image: cookies.get(`avatarURL`),
+    },
+    authToken
+  );
+}
 
 const App = () => {
   if (!authToken) return <Auth />;
@@ -24,7 +39,7 @@ const App = () => {
   return (
     <div>
       <div className="app__wrapper">
-        <Chat client={client} theme="team-light">
+        <Chat client={client} theme="team light">
           <ChannelListContainer />
           <ChannelContainer />
           <ChannelList

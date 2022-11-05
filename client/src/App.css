@@ -1708,7 +1708,7 @@ div.rta__autocomplete.str-chat__emojisearch {
   display: none;
 }
 
-.channerl-list__container-toggle {
+.channel-list__container-toggle {
   display: none;
   height: 50px;
   width: 50px;
@@ -1779,7 +1779,7 @@ div.rta__autocomplete.str-chat__emojisearch {
     width: 100%;
   }
 
-  .channerl-list__container-toggle {
+  .channel-list__container-toggle {
     display: flex;
   }
 
@@ -1804,7 +1804,7 @@ div.rta__autocomplete.str-chat__emojisearch {
 }
 
 @media screen and (max-width: 650px) {
-  .channerl-list__container-toggle {
+  .channel-list__container-toggle {
     right: -3%;
   }
 }
@@ -1814,7 +1814,7 @@ div.rta__autocomplete.str-chat__emojisearch {
     width: 150px;
   }
 
-  .channerl-list__container-toggle {
+  .channel-list__container-toggle {
     right: -5%;
   }
 }
